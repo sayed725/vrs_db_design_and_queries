@@ -1,9 +1,9 @@
 # Vehicle Rental System - Database Design & SQL Queries
 ## Overview & Objectives
 
-This assignment is designed to evaluate your understanding of database table design, ERD relationships and SQL queries. You will work with a simplified Vehicle Rental System database.
+Here i have done database table design, ERD relationships and SQL queries.
 
-By completing this assignment, you will be able to:
+From this project i have learned:
 - Design an ERD with **1 to 1**, **1 to Many** and **Many to 1** relationships
 - Understand primary keys and foreign keys
 - Write SQL queries using JOIN, EXISTS and WHERE
@@ -18,7 +18,7 @@ The system manages:
 
 ### Business Logic - What Your Database Must Handle
 
-Your database design should support these real world scenarios:
+My database design support these real world scenarios:
 
 #### Users Table Must Store:
 - User role (Admin or Customer)
@@ -40,47 +40,39 @@ Your database design should support these real world scenarios:
 ---
 
 ## Part 1: ERD Design (Mandatory)
-> Note: You must submit your ERD in the submission otherwise you will get 0 marks.
 
-Design an Entity Relationship Diagram (ERD) for the Vehicle Rental System.
+Designed an Entity Relationship Diagram (ERD) for the Vehicle Rental System.
+🔗 **ERD DESIGN** https://l2-h2-vehicle-rental-system.vercel.app
 
-### Required Tables
-
-You must include the following tables:
-
-- Users
-- Vehicles
-- Bookings
-
-### Relationship Requirements
-
-Your ERD must clearly show:
+### This ERD clearly showing:
 
 - **One to Many**: User → Bookings
 - **Many to One**: Bookings → Vehicle
 - **One to One (logical)**: Each booking connects exactly one user and one vehicle
 
-### ERD Must Include
+### This ERD  Includes:
 
 - Primary Keys (PK)
 - Foreign Keys (FK)
 - Relationship cardinality
 - Status fields (e.g. booking status, vehicle availability)
 
-### Submission Format
 
-You need to submit your ERD as:
-- [Lucidchart ERD Tool](https://www.lucidchart.com/pages/examples/er-diagram-tool) 
-- Submit a public, shareable ERD link.
+### Tables
+
+Included tables:
+
+- Users
+- Vehicles
+- Bookings
 
 ---
 
 ## Part 2: SQL Queries
 
-Write SQL queries based on your designed schema.
+SQL queries based on your designed schema.
 
 > **Check Sample Input/Output**: To understand the expected results for each query, please refer to the **[Sample Query Results (QUERY.md)](QUERY.md)** file.
-
 
 ### Query 1: JOIN
 
@@ -112,9 +104,7 @@ Find the total number of bookings for each vehicle and display only those vehicl
 ---
 
 ## Part 3: Theory Questions (Viva Practice - Progress, Not Perfection)
-> **Note:** Answer the questions in your own words and record them on camera in Bengali or English. Spend about two minutes on each question.
-
-> "This video is a safe space to practice - confidence grows every time you speak."
+> **Note:** Answered the questions in my own words and recorded them on camera in Bengali or English. Spend about two minutes on each question.
 
 
 #### Question 1
@@ -130,17 +120,3 @@ What is a primary key and what are its characteristics?
 What is the difference between INNER JOIN and LEFT JOIN in SQL?
 
 ---
-
-## Evaluation Criteria
-
-| Section         | Marks |
-|-----------------|-------|
-| ERD Design      | 60%   |
-| SQL Queries     | 20%   |
-| Theory Answers  | 20%   |
-
----
-
-## 📚 Additional Resources
-- [Sample Query Results](QUERY.md) - Expected input and output examples for SQL queries
-- [Submission Guide](SUBMISSION.md) - Assignment submission guidelines and deadlines
