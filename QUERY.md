@@ -115,8 +115,19 @@ AND status = 'available';
 
 ### Query 4: GROUP BY and HAVING
 **Requirement**: Find the total number of bookings for each vehicle and display only those vehicles that have more than 2 bookings.
+**Answer**:
+
+```
+SELECT v.name as vehicle_name,
+COUNT(b.booking_id) as total_booking
+FROM vehicles v 
+JOIN bookings b on v.vehicle_id = b.vehicle_id
+GROUP BY v.name
+HAVING COUNT(b.booking_id) > 2 ;
+```
 
 **Expected Output**:
 | vehicle_name | total_bookings |
 | :--- | :--- |
 | Honda Civic | 3 |
+| Toyota Corolla | 3 |
