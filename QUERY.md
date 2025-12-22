@@ -5,32 +5,20 @@ This document provides sample data and the expected outputs for the SQL queries 
 ## Sample Data (Input)
 
 ### Users Table
+### Users Table
 | user_id | name | email | phone | role |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Sayed | sayed123@gmail.com | 1234567890 | Admin |
-| 2 | Jayed | jayed123@gmail.com | 0987654321 | Customer |
-| 3 | Fatima | fatima.z@gmail.com | 0171122334 | Customer | 
-| 4 | Omar | omar.khalid@outlook.com | 0182233445 | Customer | 
-| 5 | Zainab | zainab_99@yahoo.com | 0193344556 | Customer |
-| 6 | Hassan | hassan_admin@company.com | 0164455667 | Admin | 
-| 7 | Mariam | mariam.khan@gmail.com | 0155566778 | Customer | 
-| 8 | Yusuf | yusuf.dev@protonmail.com | 0136677889 | Customer |
-| 9 | Layla | layla_star@gmail.com | 0147788990 | Customer |
-| 10 | Ahmed | ahmed.b@live.com | 0128899001 | Customer |
+| 1 | Alice | alice@example.com | 1234567890 | Customer |
+| 2 | Bob | bob@example.com | 0987654321 | Admin |
+| 3 | Charlie | charlie@example.com | 1122334455 | Customer |
 
 ### Vehicles Table
 | vehicle_id | name | type | model | registration_number | rental_price | status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Toyota Corolla | car | 2022 |	ABC-123 | 50 | available |
-| 2 | Honda Civic |	car | 2021 | DEF-456 | 60 | rented |
-| 3 | Yamaha R15 | bike | 2023 | GHI-789 | 30 |	available |
-| 4 | Ford F-150 | truck | 2020	| JKL-012 |	100	| maintenance |
-| 5 | Tesla Model 3 | car |	2023 | MNO-345	120 | available |
-| 6 | Kawasaki Ninja | bike	| 2022 | PQR-678 | 40 |	rented |
-| 7 | Chevrolet Silverado |	truck | 2021 | STU-901 | 110 | available |
-| 8 | BMW 3 Series | car | 2022 | VWX-234 | 90 | maintenance |
-| 9 | Vespa Primavera | bike | 2024	| YZA-567 |	25 | available |
-| 10 | Mercedes Benz Sprinter |	truck | 2023 | BCD-890 | 150 | available |
+| 1 | Toyota Corolla | car | 2022 | ABC-123 | 50 | available |
+| 2 | Honda Civic | car | 2021 | DEF-456 | 60 | rented |
+| 3 | Yamaha R15 | bike | 2023 | GHI-789 | 30 | available |
+| 4 | Ford F-150 | truck | 2020 | JKL-012 | 100 | maintenance |
 
 ### Bookings Table
 | booking_id | user_id | vehicle_id | start_date | end_date | status | total_cost |
@@ -64,20 +52,16 @@ JOIN vehicles v on b.vehicle_id = v.vehicle_id
 ORDER BY b.booking_id;
 ```
 
-**Output**:
+**Expected Output**:
 | booking_id | customer_name | vehicle_name | start_date | end_date | status |
 | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Sayed | Toyota Crolla | 2023-10-01 | 2023-10-05 | completed |
-| 2 | Jayed | Honda Civic | 2023-10-10 | 2023-10-12 | completed |
-| 3 | Fatima | Yamaha R15 | 2023-11-01 | 2023-11-02 | confirmed |
-| 4 | Omar | Tesla Model 3 | 2023-11-05 | 2023-11-07 | completed |
-| 5 | Omar | Chevrolet Silverado | 2023-12-01 | 2023-12-05 | confirmed |
-| 6 | Hasan | Mercedes Benz Sprinter | 2023-12-15 | 2023-12-20 | confirmed |
-| 7 | Mariam | Vespa Primavera | 2023-12-22 | 2023-12-23 | pending |
-| 8 | Yusuf | Ford F-150 | 2023-12-24 | 2023-12-26 | cancelled |
-| 9 | Layla | Kawasaki Ninja | 2023-11-05 | 2023-11-07 | pending |
-| 10 | Ahmed | BMW 3 Series | 2024-01-05 | 2024-01-07 | pending |
+| 1 | Alice | Honda Civic | 2023-10-01 | 2023-10-05 | completed |
+| 2 | Alice | Honda Civic | 2023-11-01 | 2023-11-03 | completed |
+| 3 | Charlie | Honda Civic | 2023-12-01 | 2023-12-02 | confirmed |
+| 4 | Alice | Toyota Corolla | 2023-12-10 | 2023-12-12 | pending |
+
 ---
+
 
 ### Query 2: EXISTS
 **Requirement**: Find all vehicles that have never been booked.
@@ -94,17 +78,11 @@ WHERE NOT EXISTS (
 );
 ```
 
-**Output**:
+**Expected Output**:
 | vehicle_id | name | type | model | registration_number | rental_price | status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Toyota Corolla | car | 2022 | ABC-123 | 50 | available |
 | 3 | Yamaha R15 | bike | 2023 | GHI-789 | 30 | available |
 | 4 | Ford F-150 | truck | 2020 | JKL-012 | 100 | maintenance |
-| 5 | Tesla Model 3 | car | 2023 | MNO-345 | 120 | available |
-| 7 | Chevrolet Silverado | truck | 2021 | STU-901 | 110 | available | 
-| 8 | BMW 3 Series | car | 2022 | VWX-234 | 90 | maintenance | 
-| 9 | Vespa Primavera | bike | 2024 | YZA-567 | 25 | available | 
-| 10 | Mercedes Benz Sprinter | truck | 2023 | BCD-890 | 150 | available |
 
 ---
 
@@ -118,11 +96,10 @@ FROM vehicles v WHERE type = 'car'
 AND status = 'available';
 ```
 
-**Output**:
+**Expected Output**:
 | vehicle_id | name | type | model | registration_number | rental_price | status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | Toyota Corolla | car | 2022 | ABC-123 | 50 | available |
-| 5 | Tesla Model 3 | car | 2023 | MNO-345 | 120 | available |
 
 ---
 
@@ -143,4 +120,3 @@ HAVING COUNT(b.booking_id) > 2 ;
 | vehicle_name | total_bookings |
 | :--- | :--- |
 | Honda Civic | 3 |
-| Toyota Corolla | 3 |
