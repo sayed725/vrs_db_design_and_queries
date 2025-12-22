@@ -42,7 +42,7 @@ My database design support these real world scenarios:
 ## Part 1: ERD Design (Mandatory)
 
 Designed an Entity Relationship Diagram (ERD) for the Vehicle Rental System. <br>
-🔗 **ERD DESIGN** https://l2-h2-vehicle-rental-system.vercel.app
+🔗 **ERD DESIGN** https://drawsql.app/teams/sayed-7/diagrams/vehicle-rental-system
 
 ### This ERD clearly showing:
 
