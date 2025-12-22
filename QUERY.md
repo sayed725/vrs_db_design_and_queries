@@ -105,11 +105,27 @@ WHERE NOT EXISTS (
 
 ### Query 3: WHERE
 **Requirement**: Retrieve all available vehicles of a specific type (e.g. cars).
+**Answer**:
 
-**Expected Output**:
+```
+SELECT
+  v.id as vehicle_id,
+  v.vehicle_name as name,
+  v.type,
+  v.model,
+  v.registration_number,
+  v.rental_price,
+  v.availability_status as status
+  
+FROM vehicles v WHERE type = 'car'
+AND availability_status = 'available';
+```
+
+**Output**:
 | vehicle_id | name | type | model | registration_number | rental_price | status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 1 | Toyota Corolla | car | 2022 | ABC-123 | 50 | available |
+| 5 | Tesla Model 3 | car | 2023 | MNO-345 | 120 | available |
 
 ---
 
