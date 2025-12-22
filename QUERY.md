@@ -37,18 +37,18 @@ This document provides sample data and the expected outputs for the SQL queries 
 
 ```
 SELECT
-  b.id as booking_id,
+  b.booking_id,
   u.name as customer_name,
-  v.vehicle_name,
-  b.rent_start_date as start_date,
-  b.rent_end_date as end_date,
-  b.booking_status as status 
+  v.name as vehicle_name,
+  b.start_date,
+  b.end_date,
+  b.status 
 
 FROM bookings b
-JOIN users u on b.user_id = u.id
-JOIN vehicles v on b.vehicle_id = v.id 
+JOIN users u on b.user_id = u.user_id
+JOIN vehicles v on b.vehicle_id = v.vehicle_id 
   
-ORDER BY b.id;
+ORDER BY b.booking_id;
 ```
 
 **Output**:
@@ -71,21 +71,13 @@ ORDER BY b.id;
 **Answer**:
 
 ```
-SELECT 
-  v.id as vehicle_id,
-  v.vehicle_name as name,
-  v.type,
-  v.model,
-  v.registration_number,
-  v.rental_price,
-  v.availability_status as status
-  
+SELECT *
 FROM vehicles v
 WHERE NOT EXISTS (
     SELECT *
     FROM vehicles v2 
-    WHERE v2.id = v.id 
-    AND v2.availability_status = 'rented'
+    WHERE v2.vehicle_id = v.vehicle_id 
+    AND v2.status = 'rented'
 );
 ```
 
@@ -108,17 +100,9 @@ WHERE NOT EXISTS (
 **Answer**:
 
 ```
-SELECT
-  v.id as vehicle_id,
-  v.vehicle_name as name,
-  v.type,
-  v.model,
-  v.registration_number,
-  v.rental_price,
-  v.availability_status as status
-  
+SELECT *  
 FROM vehicles v WHERE type = 'car'
-AND availability_status = 'available';
+AND status = 'available';
 ```
 
 **Output**:
