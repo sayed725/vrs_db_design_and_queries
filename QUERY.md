@@ -71,26 +71,35 @@ order by b.id;
 **Answer**:
 
 ```
-select
-  b.id as booking_id,
-  u.name as customer_name,
-  v.vehicle_name,
-  b.rent_start_date as start_date,
-  b.rent_end_date as end_date,
-  b.booking_status as status 
-
-from bookings b
-join users u on b.user_id = u.id
-join vehicles v on b.vehicle_id = v.id 
+SELECT 
+  v.id as vehicle_id,
+  v.vehicle_name as name,
+  v.type,
+  v.model,
+  v.registration_number,
+  v.rental_price,
+  v.availability_status as status
   
-order by b.id;
+FROM vehicles v
+WHERE NOT EXISTS (
+    SELECT *
+    FROM vehicles v2 
+    WHERE v2.id = v.id 
+    AND v2.availability_status = 'rented'
+);
 ```
 
 **Output**:
 | vehicle_id | name | type | model | registration_number | rental_price | status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | Toyota Corolla | car | 2022 | ABC-123 | 50 | available |
 | 3 | Yamaha R15 | bike | 2023 | GHI-789 | 30 | available |
 | 4 | Ford F-150 | truck | 2020 | JKL-012 | 100 | maintenance |
+| 5 | Tesla Model 3 | car | 2023 | MNO-345 | 120 | available |
+| 7 | Chevrolet Silverado | truck | 2021 | STU-901 | 110 | available | 
+| 8 | BMW 3 Series | car | 2022 | VWX-234 | 90 | maintenance | 
+| 9 | Vespa Primavera | bike | 2024 | YZA-567 | 25 | available | 
+| 10 | Mercedes Benz Sprinter | truck | 2023 | BCD-890 | 150 | available |
 
 ---
 
