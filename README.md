@@ -4,9 +4,9 @@
 Here i have done database table design, ERD relationships and SQL queries.
 
 From this project i have learned:
-- Design an ERD with **1 to 1**, **1 to Many** and **Many to 1** relationships
-- Understand primary keys and foreign keys
-- Write SQL queries using JOIN, EXISTS and WHERE
+- Designing an ERD with **1 to 1**, **1 to Many** and **Many to 1** relationships
+- Understanding primary keys and foreign keys
+- Writing SQL queries using JOIN, EXISTS and WHERE
 
 ## Database Design & Business Logic
 
@@ -16,7 +16,7 @@ The system manages:
 - **Vehicles**
 - **Bookings**
 
-### Business Logic - What Your Database Must Handle
+### Business Logic - In Database I Handled
 
 My database design support these real world scenarios:
 
@@ -41,7 +41,7 @@ My database design support these real world scenarios:
 
 ## Part 1: ERD Design (Mandatory)
 
-Designed an Entity Relationship Diagram (ERD) for the Vehicle Rental System.
+Designed an Entity Relationship Diagram (ERD) for the Vehicle Rental System. <br>
 🔗 **ERD DESIGN** https://l2-h2-vehicle-rental-system.vercel.app
 
 ### This ERD clearly showing:
