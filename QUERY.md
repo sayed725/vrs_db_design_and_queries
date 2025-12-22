@@ -36,7 +36,7 @@ This document provides sample data and the expected outputs for the SQL queries 
 **Answer**:
 
 ```
-select
+SELECT
   b.id as booking_id,
   u.name as customer_name,
   v.vehicle_name,
@@ -44,11 +44,11 @@ select
   b.rent_end_date as end_date,
   b.booking_status as status 
 
-from bookings b
-join users u on b.user_id = u.id
-join vehicles v on b.vehicle_id = v.id 
+FROM bookings b
+JOIN users u on b.user_id = u.id
+JOIN vehicles v on b.vehicle_id = v.id 
   
-order by b.id;
+ORDER BY b.id;
 ```
 
 **Output**:
