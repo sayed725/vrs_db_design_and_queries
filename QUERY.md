@@ -5,7 +5,6 @@ This document provides sample data and the expected outputs for the SQL queries 
 ## Sample Data (Input)
 
 ### Users Table
-### Users Table
 | user_id | name | email | phone | role |
 | :--- | :--- | :--- | :--- | :--- |
 | 1 | Alice | alice@example.com | 1234567890 | Customer |
@@ -81,6 +80,7 @@ WHERE NOT EXISTS (
 **Expected Output**:
 | vehicle_id | name | type | model | registration_number | rental_price | status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 1 | Toyota Corolla | car | 2022 | ABC-123 | 50 | available |
 | 3 | Yamaha R15 | bike | 2023 | GHI-789 | 30 | available |
 | 4 | Ford F-150 | truck | 2020 | JKL-012 | 100 | maintenance |
 
