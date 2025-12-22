@@ -7,17 +7,30 @@ This document provides sample data and the expected outputs for the SQL queries 
 ### Users Table
 | user_id | name | email | phone | role |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Alice | alice@example.com | 1234567890 | Customer |
-| 2 | Bob | bob@example.com | 0987654321 | Admin |
-| 3 | Charlie | charlie@example.com | 1122334455 | Customer |
+| 1 | Sayed | sayed123@gmail.com | 1234567890 | Admin |
+| 2 | Jayed | jayed123@gmail.com | 0987654321 | Customer |
+| 3 | Fatima | fatima.z@gmail.com | 0171122334 | Customer | 
+| 4 | Omar | omar.khalid@outlook.com | 0182233445 | Customer | 
+| 5 | Zainab | zainab_99@yahoo.com | 0193344556 | Customer |
+| 6 | Hassan | hassan_admin@company.com | 0164455667 | Admin | 
+| 7 | Mariam | mariam.khan@gmail.com | 0155566778 | Customer | 
+| 8 | Yusuf | yusuf.dev@protonmail.com | 0136677889 | Customer |
+| 9 | Layla | layla_star@gmail.com | 0147788990 | Customer |
+| 10 | Ahmed | ahmed.b@live.com | 0128899001 | Customer |
 
 ### Vehicles Table
 | vehicle_id | name | type | model | registration_number | rental_price | status |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | Toyota Corolla | car | 2022 | ABC-123 | 50 | available |
-| 2 | Honda Civic | car | 2021 | DEF-456 | 60 | rented |
-| 3 | Yamaha R15 | bike | 2023 | GHI-789 | 30 | available |
-| 4 | Ford F-150 | truck | 2020 | JKL-012 | 100 | maintenance |
+| 1 | Toyota Corolla | car | 2022 |	ABC-123 | 50 | available |
+| 2 | Honda Civic |	car | 2021 | DEF-456 | 60 | rented |
+| 3 | Yamaha R15 | bike | 2023 | GHI-789 | 30 |	available |
+| 4 | Ford F-150 | truck | 2020	| JKL-012 |	100	| maintenance |
+| 5 | Tesla Model 3 | car |	2023 | MNO-345	120 | available |
+| 6 | Kawasaki Ninja | bike	| 2022 | PQR-678 | 40 |	rented |
+| 7 | Chevrolet Silverado |	truck | 2021 | STU-901 | 110 | available |
+| 8 | BMW 3 Series | car | 2022 | VWX-234 | 90 | maintenance |
+| 9 | Vespa Primavera | bike | 2024	| YZA-567 |	25 | available |
+| 10 | Mercedes Benz Sprinter |	truck | 2023 | BCD-890 | 150 | available |
 
 ### Bookings Table
 | booking_id | user_id | vehicle_id | start_date | end_date | status | total_cost |
