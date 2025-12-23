@@ -72,7 +72,7 @@ Included tables:
 
 SQL queries based on your designed schema.
 
-> **Check Sample Input/Output**: To understand the expected results for each query, please refer to the **[Sample Query Results (QUERY.md)](QUERY.md)** file.
+> **Check Input/Output**: To see results for each query, please visit  the **[Results (QUERY.md)](QUERY.md)** file.
 
 ### Query 1: JOIN
 
