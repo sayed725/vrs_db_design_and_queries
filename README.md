@@ -20,18 +20,18 @@ The system manages:
 
 My database design support these real world scenarios:
 
-#### Users Table Must Store:
+#### Users Table Stored:
 - User role (Admin or Customer)
 - Name, email, password, phone number
 - Each email must be unique (no duplicate accounts)
 
-#### Vehicles Table Must Store:
+#### Vehicles Table Stored:
 - Vehicle name, type (car/bike/truck), model
 - Registration number (must be unique)
 - Rental price per day
 - Availability status (available/rented/maintenance)
 
-#### Bookings Table Must Store:
+#### Bookings Table  Stored:
 - Which user made the booking (link to Users table)
 - Which vehicle was booked (link to Vehicles table)
 - Start date and end date of rental
@@ -39,7 +39,7 @@ My database design support these real world scenarios:
 - Total cost of the booking
 ---
 
-## Part 1: ERD Design (Mandatory)
+## Part 1: ERD Design 
 
 Designed an Entity Relationship Diagram (ERD) for the Vehicle Rental System. <br>
 🔗 **ERD DESIGN** https://drawsql.app/teams/sayed-7/diagrams/vehicle-rental-system
